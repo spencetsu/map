@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1a131d08f146ca2bd830c1e06600c417 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            bottom: 50px; left: 50px; width: 200px; height: 120px; 
+            background-color: white; border:2px solid grey; z-index:9999; font-size:14px;
+            padding: 10px;">
+    <strong>Legend</strong><br>
+    <i style="background:blue; width:10px; height:10px; display:inline-block; margin-right:5px;"></i> High (80+)<br>
+    <i style="background:orange; width:10px; height:10px; display:inline-block; margin-right:5px;"></i> Medium (60–79)<br>
+    <i style="background:red; width:10px; height:10px; display:inline-block; margin-right:5px;"></i> Low (<60)
+</div>
+    
+<div style="position: fixed; 
+            top: 10px; left: 50%; transform: translate(-50%, 0); 
+            background-color: white; border:2px solid grey; z-index:9999; font-size:16px;
+            padding: 10px;">
+    <strong>Transit Accessibility in Toronto</strong>
+</div>
+    
+            <div class="folium-map" id="map_1a131d08f146ca2bd830c1e06600c417" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1a131d08f146ca2bd830c1e06600c417 = L.map(
+                "map_1a131d08f146ca2bd830c1e06600c417",
+                {
+                    center: [43.7, -79.4],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d3db87cbdda3f9c508a4dec2e013b51f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_d3db87cbdda3f9c508a4dec2e013b51f.addTo(map_1a131d08f146ca2bd830c1e06600c417);
+        
+    
+            var circle_marker_b976b31f7157059a96c2eb5a441965a7 = L.circleMarker(
+                [43.6455, -79.3832],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.0, "stroke": true, "weight": 3}
+            ).addTo(map_1a131d08f146ca2bd830c1e06600c417);
+        
+    
+        var popup_53986d5ccf4b82503d2ab863be121c98 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cf662c632426b7f13a7c8cbf63123b01 = $(`<div id="html_cf662c632426b7f13a7c8cbf63123b01" style="width: 100.0%; height: 100.0%;">Union Station: 90 Accessibility Score</div>`)[0];
+                popup_53986d5ccf4b82503d2ab863be121c98.setContent(html_cf662c632426b7f13a7c8cbf63123b01);
+            
+        
+
+        circle_marker_b976b31f7157059a96c2eb5a441965a7.bindPopup(popup_53986d5ccf4b82503d2ab863be121c98)
+        ;
+
+        
+    
+    
+            var circle_marker_4ed431655688dfcd7d1bde4d6c681913 = L.circleMarker(
+                [43.7806, -79.4159],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_1a131d08f146ca2bd830c1e06600c417);
+        
+    
+        var popup_8ccc7167a2a1edc8cd6133ea2ddbd66e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4bbf18e700f02730d9dcb45af0fb2e7b = $(`<div id="html_4bbf18e700f02730d9dcb45af0fb2e7b" style="width: 100.0%; height: 100.0%;">Finch Station: 75 Accessibility Score</div>`)[0];
+                popup_8ccc7167a2a1edc8cd6133ea2ddbd66e.setContent(html_4bbf18e700f02730d9dcb45af0fb2e7b);
+            
+        
+
+        circle_marker_4ed431655688dfcd7d1bde4d6c681913.bindPopup(popup_8ccc7167a2a1edc8cd6133ea2ddbd66e)
+        ;
+
+        
+    
+    
+            var circle_marker_7bb35cee9953426301a04158f7f43580 = L.circleMarker(
+                [43.67, -79.3871],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.8, "stroke": true, "weight": 3}
+            ).addTo(map_1a131d08f146ca2bd830c1e06600c417);
+        
+    
+        var popup_aefd8901517e4919f2356eaf3350a7f9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9bc9d222990ea3f68dd8aa7efc5b79da = $(`<div id="html_9bc9d222990ea3f68dd8aa7efc5b79da" style="width: 100.0%; height: 100.0%;">Bloor-Yonge Station: 88 Accessibility Score</div>`)[0];
+                popup_aefd8901517e4919f2356eaf3350a7f9.setContent(html_9bc9d222990ea3f68dd8aa7efc5b79da);
+            
+        
+
+        circle_marker_7bb35cee9953426301a04158f7f43580.bindPopup(popup_aefd8901517e4919f2356eaf3350a7f9)
+        ;
+
+        
+    
+    
+            var circle_marker_715c09a2749c477eab5589794490b26a = L.circleMarker(
+                [43.637, -79.5361],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_1a131d08f146ca2bd830c1e06600c417);
+        
+    
+        var popup_997e9a5fa25f43d239749d28c937c68d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_86da092958ec12476a05860a6bf496f0 = $(`<div id="html_86da092958ec12476a05860a6bf496f0" style="width: 100.0%; height: 100.0%;">Kipling Station: 65 Accessibility Score</div>`)[0];
+                popup_997e9a5fa25f43d239749d28c937c68d.setContent(html_86da092958ec12476a05860a6bf496f0);
+            
+        
+
+        circle_marker_715c09a2749c477eab5589794490b26a.bindPopup(popup_997e9a5fa25f43d239749d28c937c68d)
+        ;
+
+        
+    
+    
+            var circle_marker_be8bd3a1db037c7dee0ddda0a3506329 = L.circleMarker(
+                [43.7742, -79.2577],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_1a131d08f146ca2bd830c1e06600c417);
+        
+    
+        var popup_436954848acbc82defac554382934a54 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2dc01c747b9a61bfb18eebb13536b8f0 = $(`<div id="html_2dc01c747b9a61bfb18eebb13536b8f0" style="width: 100.0%; height: 100.0%;">Scarborough Centre: 70 Accessibility Score</div>`)[0];
+                popup_436954848acbc82defac554382934a54.setContent(html_2dc01c747b9a61bfb18eebb13536b8f0);
+            
+        
+
+        circle_marker_be8bd3a1db037c7dee0ddda0a3506329.bindPopup(popup_436954848acbc82defac554382934a54)
+        ;
+
+        
+    
+    
+            var circle_marker_31b49e1bde288fc3bbe30d45a5a5caf5 = L.circleMarker(
+                [43.7543, -79.3856],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.5, "stroke": true, "weight": 3}
+            ).addTo(map_1a131d08f146ca2bd830c1e06600c417);
+        
+    
+        var popup_cc5796328b2cde61816913861627357a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6ce8971675a05cf34f809115b5d274a6 = $(`<div id="html_6ce8971675a05cf34f809115b5d274a6" style="width: 100.0%; height: 100.0%;">Sheppard-Yonge Station: 85 Accessibility Score</div>`)[0];
+                popup_cc5796328b2cde61816913861627357a.setContent(html_6ce8971675a05cf34f809115b5d274a6);
+            
+        
+
+        circle_marker_31b49e1bde288fc3bbe30d45a5a5caf5.bindPopup(popup_cc5796328b2cde61816913861627357a)
+        ;
+
+        
+    
+    
+            var circle_marker_48039afe6d2f837d66dd18faa2a65e21 = L.circleMarker(
+                [43.7056, -79.3973],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.8, "stroke": true, "weight": 3}
+            ).addTo(map_1a131d08f146ca2bd830c1e06600c417);
+        
+    
+        var popup_464ca0e739a8a894e927b81864ca8fd7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_629eb5744fd84ab82698c2cb2fe64821 = $(`<div id="html_629eb5744fd84ab82698c2cb2fe64821" style="width: 100.0%; height: 100.0%;">Eglinton Station: 78 Accessibility Score</div>`)[0];
+                popup_464ca0e739a8a894e927b81864ca8fd7.setContent(html_629eb5744fd84ab82698c2cb2fe64821);
+            
+        
+
+        circle_marker_48039afe6d2f837d66dd18faa2a65e21.bindPopup(popup_464ca0e739a8a894e927b81864ca8fd7)
+        ;
+
+        
+    
+    
+            var circle_marker_fb4ad05e03afd640578d34365c31f6ac = L.circleMarker(
+                [43.7258, -79.4512],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.2, "stroke": true, "weight": 3}
+            ).addTo(map_1a131d08f146ca2bd830c1e06600c417);
+        
+    
+        var popup_25dc4c70ba37750bc5ee65370d3701b6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_30423cd2805a86839bec013b5793b9a2 = $(`<div id="html_30423cd2805a86839bec013b5793b9a2" style="width: 100.0%; height: 100.0%;">Yorkdale Station: 82 Accessibility Score</div>`)[0];
+                popup_25dc4c70ba37750bc5ee65370d3701b6.setContent(html_30423cd2805a86839bec013b5793b9a2);
+            
+        
+
+        circle_marker_fb4ad05e03afd640578d34365c31f6ac.bindPopup(popup_25dc4c70ba37750bc5ee65370d3701b6)
+        ;
+
+        
+    
+    
+            var circle_marker_fca0eef3f37a1effba010bc2e2a4e0ee = L.circleMarker(
+                [43.6341, -79.523],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_1a131d08f146ca2bd830c1e06600c417);
+        
+    
+        var popup_6df22b78cd8b49207d1aa7b96711da58 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d9ad24c566e75d0d4408beea6e92b69d = $(`<div id="html_d9ad24c566e75d0d4408beea6e92b69d" style="width: 100.0%; height: 100.0%;">Islington Station: 60 Accessibility Score</div>`)[0];
+                popup_6df22b78cd8b49207d1aa7b96711da58.setContent(html_d9ad24c566e75d0d4408beea6e92b69d);
+            
+        
+
+        circle_marker_fca0eef3f37a1effba010bc2e2a4e0ee.bindPopup(popup_6df22b78cd8b49207d1aa7b96711da58)
+        ;
+
+        
+    
+    
+            var circle_marker_26b2cb4ae72a75990fccadd0fe7b878e = L.circleMarker(
+                [43.6536, -79.4667],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.3, "stroke": true, "weight": 3}
+            ).addTo(map_1a131d08f146ca2bd830c1e06600c417);
+        
+    
+        var popup_e9cdad85ad5593c77c89f21e45fc5243 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_92dc9030e985cc6303be2c97317ebc78 = $(`<div id="html_92dc9030e985cc6303be2c97317ebc78" style="width: 100.0%; height: 100.0%;">High Park Station: 73 Accessibility Score</div>`)[0];
+                popup_e9cdad85ad5593c77c89f21e45fc5243.setContent(html_92dc9030e985cc6303be2c97317ebc78);
+            
+        
+
+        circle_marker_26b2cb4ae72a75990fccadd0fe7b878e.bindPopup(popup_e9cdad85ad5593c77c89f21e45fc5243)
+        ;
+
+        
+    
+</script>
+</html>
