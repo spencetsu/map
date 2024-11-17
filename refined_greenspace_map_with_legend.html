@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b2696070bd041130940eafc90d44b953 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            bottom: 50px; left: 50px; width: 220px; height: 120px; 
+            background-color: white; border:2px solid grey; z-index:9999; font-size:14px;
+            padding: 10px;">
+    <strong>Legend</strong><br>
+    <i style="background:green; width:10px; height:10px; display:inline-block; margin-right:5px;"></i> Green Spaces<br>
+    <i style="background:black; width:10px; height:10px; display:inline-block; margin-right:5px;"></i> Neighborhood Boundary<br>
+</div>
+    
+<div style="position: fixed; 
+            top: 10px; left: 50%; transform: translate(-50%, 0); 
+            background-color: white; border:2px solid grey; z-index:9999; font-size:16px;
+            padding: 10px;">
+    <strong>Green Spaces in Northeastern Sunnylea</strong>
+</div>
+    
+            <div class="folium-map" id="map_b2696070bd041130940eafc90d44b953" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b2696070bd041130940eafc90d44b953 = L.map(
+                "map_b2696070bd041130940eafc90d44b953",
+                {
+                    center: [43.645, -79.5],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 14,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a248d8fa170dbd31921affd16d351b62 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_a248d8fa170dbd31921affd16d351b62.addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+            var polygon_6228ddbb84312143f60eb5e74915ae69 = L.polygon(
+                [[43.61, -79.55], [43.61, -79.45], [43.68, -79.45], [43.68, -79.55]],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_a64d653ebe790561819d0976f1570e65 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a6c64ec9dfa07824fe21e5d097dfe68d = $(`<div id="html_a6c64ec9dfa07824fe21e5d097dfe68d" style="width: 100.0%; height: 100.0%;">Northeastern Sunnylea Boundary</div>`)[0];
+                popup_a64d653ebe790561819d0976f1570e65.setContent(html_a6c64ec9dfa07824fe21e5d097dfe68d);
+            
+        
+
+        polygon_6228ddbb84312143f60eb5e74915ae69.bindPopup(popup_a64d653ebe790561819d0976f1570e65)
+        ;
+
+        
+    
+    
+            var polygon_f01313dc6e55c8907d48fc4d412501a1 = L.polygon(
+                [[43.61805909007292, -79.47719736384218], [43.619423546765255, -79.47719736384218], [43.619423546765255, -79.47583290714984], [43.61805909007292, -79.47583290714984]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_33cce921faf4035fc30d40df19f18b06 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a1b06c3435f2c6ddf2c7251ecc4c52cc = $(`<div id="html_a1b06c3435f2c6ddf2c7251ecc4c52cc" style="width: 100.0%; height: 100.0%;">Green Space at (43.6181, -79.4772)</div>`)[0];
+                popup_33cce921faf4035fc30d40df19f18b06.setContent(html_a1b06c3435f2c6ddf2c7251ecc4c52cc);
+            
+        
+
+        polygon_f01313dc6e55c8907d48fc4d412501a1.bindPopup(popup_33cce921faf4035fc30d40df19f18b06)
+        ;
+
+        
+    
+    
+            var polygon_1a5489fc64ce4972124f69eaf6c118ad = L.polygon(
+                [[43.639917141181776, -79.533319591004], [43.64098172610134, -79.533319591004], [43.64098172610134, -79.53225500608444], [43.639917141181776, -79.53225500608444]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_dc88a2d62f9e73027a5f1295995319ee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d3d78e4649139c1a5d4660f27e89fcd1 = $(`<div id="html_d3d78e4649139c1a5d4660f27e89fcd1" style="width: 100.0%; height: 100.0%;">Green Space at (43.6399, -79.5333)</div>`)[0];
+                popup_dc88a2d62f9e73027a5f1295995319ee.setContent(html_d3d78e4649139c1a5d4660f27e89fcd1);
+            
+        
+
+        polygon_1a5489fc64ce4972124f69eaf6c118ad.bindPopup(popup_dc88a2d62f9e73027a5f1295995319ee)
+        ;
+
+        
+    
+    
+            var polygon_5f176707eb5dcc5f2a13a55a3a9ae35e = L.polygon(
+                [[43.64259491349126, -79.52228119376774], [43.644043607624525, -79.52228119376774], [43.644043607624525, -79.52083249963447], [43.64259491349126, -79.52083249963447]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_471a1965cfc089a8d18bb0088d1e32df = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fd50071ee08f1b5602ce79d6df1f397b = $(`<div id="html_fd50071ee08f1b5602ce79d6df1f397b" style="width: 100.0%; height: 100.0%;">Green Space at (43.6426, -79.5223)</div>`)[0];
+                popup_471a1965cfc089a8d18bb0088d1e32df.setContent(html_fd50071ee08f1b5602ce79d6df1f397b);
+            
+        
+
+        polygon_5f176707eb5dcc5f2a13a55a3a9ae35e.bindPopup(popup_471a1965cfc089a8d18bb0088d1e32df)
+        ;
+
+        
+    
+    
+            var polygon_3570c9935a806db53cc4610dc1e6958c = L.polygon(
+                [[43.67366007151456, -79.4695351009274], [43.67553790635045, -79.4695351009274], [43.67553790635045, -79.4676572660915], [43.67366007151456, -79.4676572660915]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_6a22f198f2e9e519956826899a7fe016 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_94f6dc6d74824ddc9728159ec48afd85 = $(`<div id="html_94f6dc6d74824ddc9728159ec48afd85" style="width: 100.0%; height: 100.0%;">Green Space at (43.6737, -79.4695)</div>`)[0];
+                popup_6a22f198f2e9e519956826899a7fe016.setContent(html_94f6dc6d74824ddc9728159ec48afd85);
+            
+        
+
+        polygon_3570c9935a806db53cc4610dc1e6958c.bindPopup(popup_6a22f198f2e9e519956826899a7fe016)
+        ;
+
+        
+    
+    
+            var polygon_62e9f175bdf18a46fe5c5a13f637b0bd = L.polygon(
+                [[43.643880234854855, -79.52683750557975], [43.64574142781569, -79.52683750557975], [43.64574142781569, -79.5249763126189], [43.643880234854855, -79.5249763126189]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_e178bc840d6009133587a228a425f705 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e7b357aba4f47051b4828a958530ee57 = $(`<div id="html_e7b357aba4f47051b4828a958530ee57" style="width: 100.0%; height: 100.0%;">Green Space at (43.6439, -79.5268)</div>`)[0];
+                popup_e178bc840d6009133587a228a425f705.setContent(html_e7b357aba4f47051b4828a958530ee57);
+            
+        
+
+        polygon_62e9f175bdf18a46fe5c5a13f637b0bd.bindPopup(popup_e178bc840d6009133587a228a425f705)
+        ;
+
+        
+    
+    
+            var polygon_05c03df59e4b0db8e8fd2520ec00929a = L.polygon(
+                [[43.67598133714063, -79.51483419759076], [43.67718919367504, -79.51483419759076], [43.67718919367504, -79.51362634105634], [43.67598133714063, -79.51362634105634]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_e07a527e0960aff978a2a7ee7e453c01 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_df6e92c483f21531948c9dd1c939364f = $(`<div id="html_df6e92c483f21531948c9dd1c939364f" style="width: 100.0%; height: 100.0%;">Green Space at (43.6760, -79.5148)</div>`)[0];
+                popup_e07a527e0960aff978a2a7ee7e453c01.setContent(html_df6e92c483f21531948c9dd1c939364f);
+            
+        
+
+        polygon_05c03df59e4b0db8e8fd2520ec00929a.bindPopup(popup_e07a527e0960aff978a2a7ee7e453c01)
+        ;
+
+        
+    
+    
+            var polygon_adb3ca11f6e1d15515983a866788c7cc = L.polygon(
+                [[43.67870523625382, -79.52043294119046], [43.68019692581365, -79.52043294119046], [43.68019692581365, -79.51894125163064], [43.67870523625382, -79.51894125163064]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_e1bcaecc7898fb415692cc23c85d42b5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_734eb8068143f2857d79839a78c96ed5 = $(`<div id="html_734eb8068143f2857d79839a78c96ed5" style="width: 100.0%; height: 100.0%;">Green Space at (43.6787, -79.5204)</div>`)[0];
+                popup_e1bcaecc7898fb415692cc23c85d42b5.setContent(html_734eb8068143f2857d79839a78c96ed5);
+            
+        
+
+        polygon_adb3ca11f6e1d15515983a866788c7cc.bindPopup(popup_e1bcaecc7898fb415692cc23c85d42b5)
+        ;
+
+        
+    
+    
+            var polygon_c148020dfe1b5149ae2ed7c3081e7eb4 = L.polygon(
+                [[43.63801448946542, -79.45370822913641], [43.63917556093971, -79.45370822913641], [43.63917556093971, -79.45254715766211], [43.63801448946542, -79.45254715766211]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_a52f61d3e7a5364d1378aa1b5544299a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bcbe739098af1aeb0fbcf9047d37b234 = $(`<div id="html_bcbe739098af1aeb0fbcf9047d37b234" style="width: 100.0%; height: 100.0%;">Green Space at (43.6380, -79.4537)</div>`)[0];
+                popup_a52f61d3e7a5364d1378aa1b5544299a.setContent(html_bcbe739098af1aeb0fbcf9047d37b234);
+            
+        
+
+        polygon_c148020dfe1b5149ae2ed7c3081e7eb4.bindPopup(popup_a52f61d3e7a5364d1378aa1b5544299a)
+        ;
+
+        
+    
+    
+            var polygon_c6d9aecb647a3f1db29673109f1e07c4 = L.polygon(
+                [[43.61487909244968, -79.54915193643743], [43.61655232882871, -79.54915193643743], [43.61655232882871, -79.54747870005839], [43.61487909244968, -79.54747870005839]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_eb050fa56ccb2434d7b037486fe13fba = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8f3d5764dd09db743b007f8332bf6565 = $(`<div id="html_8f3d5764dd09db743b007f8332bf6565" style="width: 100.0%; height: 100.0%;">Green Space at (43.6149, -79.5492)</div>`)[0];
+                popup_eb050fa56ccb2434d7b037486fe13fba.setContent(html_8f3d5764dd09db743b007f8332bf6565);
+            
+        
+
+        polygon_c6d9aecb647a3f1db29673109f1e07c4.bindPopup(popup_eb050fa56ccb2434d7b037486fe13fba)
+        ;
+
+        
+    
+    
+            var polygon_6d6805e7f7290b500cb7e8bea2d2f462 = L.polygon(
+                [[43.62240050899583, -79.46919347902528], [43.6243548786565, -79.46919347902528], [43.6243548786565, -79.46723910936461], [43.62240050899583, -79.46723910936461]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_56dc6c07745f3f852b6c23ecd38c9893 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_58272811755eb819a7f6345419ebae68 = $(`<div id="html_58272811755eb819a7f6345419ebae68" style="width: 100.0%; height: 100.0%;">Green Space at (43.6224, -79.4692)</div>`)[0];
+                popup_56dc6c07745f3f852b6c23ecd38c9893.setContent(html_58272811755eb819a7f6345419ebae68);
+            
+        
+
+        polygon_6d6805e7f7290b500cb7e8bea2d2f462.bindPopup(popup_56dc6c07745f3f852b6c23ecd38c9893)
+        ;
+
+        
+    
+    
+            var polygon_bf09d01f22d9758214661540b8ad1e7b = L.polygon(
+                [[43.614321978792724, -79.46800338871485], [43.615731582134686, -79.46800338871485], [43.615731582134686, -79.4665937853729], [43.614321978792724, -79.4665937853729]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_1e11295436b1b5b4b8a678a2889e6c2c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_082b01db6e9099cb417b3c4942da4d3a = $(`<div id="html_082b01db6e9099cb417b3c4942da4d3a" style="width: 100.0%; height: 100.0%;">Green Space at (43.6143, -79.4680)</div>`)[0];
+                popup_1e11295436b1b5b4b8a678a2889e6c2c.setContent(html_082b01db6e9099cb417b3c4942da4d3a);
+            
+        
+
+        polygon_bf09d01f22d9758214661540b8ad1e7b.bindPopup(popup_1e11295436b1b5b4b8a678a2889e6c2c)
+        ;
+
+        
+    
+    
+            var polygon_baaadb3a0a89ddc6ff288551a3c95c83 = L.polygon(
+                [[43.67293785931781, -79.54424061255901], [43.67398166496782, -79.54424061255901], [43.67398166496782, -79.543196806909], [43.67293785931781, -79.543196806909]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_229c3ce5e4f667a4e4c89b71bc3e39d5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_30c054d063d8a944688a8506adadf226 = $(`<div id="html_30c054d063d8a944688a8506adadf226" style="width: 100.0%; height: 100.0%;">Green Space at (43.6729, -79.5442)</div>`)[0];
+                popup_229c3ce5e4f667a4e4c89b71bc3e39d5.setContent(html_30c054d063d8a944688a8506adadf226);
+            
+        
+
+        polygon_baaadb3a0a89ddc6ff288551a3c95c83.bindPopup(popup_229c3ce5e4f667a4e4c89b71bc3e39d5)
+        ;
+
+        
+    
+    
+            var polygon_8bcb7af38b982adb3e19bba0f46735ea = L.polygon(
+                [[43.61888910497219, -79.53777775613248], [43.62007925920583, -79.53777775613248], [43.62007925920583, -79.53658760189884], [43.61888910497219, -79.53658760189884]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_aedc5330e978c718ea1f8a53477597ee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_aaf5b0c69ebfc34ba5fdaba868c9c0f3 = $(`<div id="html_aaf5b0c69ebfc34ba5fdaba868c9c0f3" style="width: 100.0%; height: 100.0%;">Green Space at (43.6189, -79.5378)</div>`)[0];
+                popup_aedc5330e978c718ea1f8a53477597ee.setContent(html_aaf5b0c69ebfc34ba5fdaba868c9c0f3);
+            
+        
+
+        polygon_8bcb7af38b982adb3e19bba0f46735ea.bindPopup(popup_aedc5330e978c718ea1f8a53477597ee)
+        ;
+
+        
+    
+    
+            var polygon_f75dc01967e02f9a10fb7cc9abf3af6a = L.polygon(
+                [[43.614274765556615, -79.4580355014079], [43.61610972578605, -79.4580355014079], [43.61610972578605, -79.45620054117846], [43.614274765556615, -79.45620054117846]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_e451a50e54020c705f4b50d836069121 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ca6a6996b5e7773ed03c8ea338027d0c = $(`<div id="html_ca6a6996b5e7773ed03c8ea338027d0c" style="width: 100.0%; height: 100.0%;">Green Space at (43.6143, -79.4580)</div>`)[0];
+                popup_e451a50e54020c705f4b50d836069121.setContent(html_ca6a6996b5e7773ed03c8ea338027d0c);
+            
+        
+
+        polygon_f75dc01967e02f9a10fb7cc9abf3af6a.bindPopup(popup_e451a50e54020c705f4b50d836069121)
+        ;
+
+        
+    
+    
+            var polygon_6ba47549445042b5b94e673b2e33053a = L.polygon(
+                [[43.67034531237775, -79.54031395638704], [43.67227952007832, -79.54031395638704], [43.67227952007832, -79.53837974868647], [43.67034531237775, -79.53837974868647]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_6042cd846428671e06902f88315c6998 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f6243c0a64d17e1749f34654cb0ad415 = $(`<div id="html_f6243c0a64d17e1749f34654cb0ad415" style="width: 100.0%; height: 100.0%;">Green Space at (43.6703, -79.5403)</div>`)[0];
+                popup_6042cd846428671e06902f88315c6998.setContent(html_f6243c0a64d17e1749f34654cb0ad415);
+            
+        
+
+        polygon_6ba47549445042b5b94e673b2e33053a.bindPopup(popup_6042cd846428671e06902f88315c6998)
+        ;
+
+        
+    
+    
+            var polygon_c003c602ec9c404adcfc27540401ec21 = L.polygon(
+                [[43.65736598791497, -79.46486598697003], [43.659329101562136, -79.46486598697003], [43.659329101562136, -79.46290287332286], [43.65736598791497, -79.46290287332286]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_a291cd47c73c0fba017c6f30dc1b47c3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2517e7208bf9ca411492590c7bbcbb50 = $(`<div id="html_2517e7208bf9ca411492590c7bbcbb50" style="width: 100.0%; height: 100.0%;">Green Space at (43.6574, -79.4649)</div>`)[0];
+                popup_a291cd47c73c0fba017c6f30dc1b47c3.setContent(html_2517e7208bf9ca411492590c7bbcbb50);
+            
+        
+
+        polygon_c003c602ec9c404adcfc27540401ec21.bindPopup(popup_a291cd47c73c0fba017c6f30dc1b47c3)
+        ;
+
+        
+    
+    
+            var polygon_458b1778f7b9f6f761b67824e025f86d = L.polygon(
+                [[43.6588362154086, -79.53754788233037], [43.660601090642345, -79.53754788233037], [43.660601090642345, -79.53578300709663], [43.6588362154086, -79.53578300709663]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_500f1b0536e8499bcaf6699bfe4ddf7b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eb93a826a5d8bf0b0b13472366c5fa24 = $(`<div id="html_eb93a826a5d8bf0b0b13472366c5fa24" style="width: 100.0%; height: 100.0%;">Green Space at (43.6588, -79.5375)</div>`)[0];
+                popup_500f1b0536e8499bcaf6699bfe4ddf7b.setContent(html_eb93a826a5d8bf0b0b13472366c5fa24);
+            
+        
+
+        polygon_458b1778f7b9f6f761b67824e025f86d.bindPopup(popup_500f1b0536e8499bcaf6699bfe4ddf7b)
+        ;
+
+        
+    
+    
+            var polygon_271ede2e3de99c2e978d1878fb11aa59 = L.polygon(
+                [[43.67876592708626, -79.47612662510568], [43.679828754038496, -79.47612662510568], [43.679828754038496, -79.47506379815344], [43.67876592708626, -79.47506379815344]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_31d8fd963c29972fabf853588ad50a82 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_491165ee487ad3497daa2be211760c1e = $(`<div id="html_491165ee487ad3497daa2be211760c1e" style="width: 100.0%; height: 100.0%;">Green Space at (43.6788, -79.4761)</div>`)[0];
+                popup_31d8fd963c29972fabf853588ad50a82.setContent(html_491165ee487ad3497daa2be211760c1e);
+            
+        
+
+        polygon_271ede2e3de99c2e978d1878fb11aa59.bindPopup(popup_31d8fd963c29972fabf853588ad50a82)
+        ;
+
+        
+    
+    
+            var polygon_0e7a492b8d21c4271e7430077024cfd1 = L.polygon(
+                [[43.626181429228666, -79.49369250196865], [43.62812727276741, -79.49369250196865], [43.62812727276741, -79.4917466584299], [43.626181429228666, -79.4917466584299]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_8b4675180bdbd29fa66e02b7fccdfc3b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_39d00c144e054fe1323b184290f3c172 = $(`<div id="html_39d00c144e054fe1323b184290f3c172" style="width: 100.0%; height: 100.0%;">Green Space at (43.6262, -79.4937)</div>`)[0];
+                popup_8b4675180bdbd29fa66e02b7fccdfc3b.setContent(html_39d00c144e054fe1323b184290f3c172);
+            
+        
+
+        polygon_0e7a492b8d21c4271e7430077024cfd1.bindPopup(popup_8b4675180bdbd29fa66e02b7fccdfc3b)
+        ;
+
+        
+    
+    
+            var polygon_8e2c15ab9c48362884b8013ecf11650c = L.polygon(
+                [[43.61648164351275, -79.52898540056268], [43.61766948126094, -79.52898540056268], [43.61766948126094, -79.52779756281448], [43.61648164351275, -79.52779756281448]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_9e432bb0cfcef809721fe9a13b8cb514 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f72788f68d3d3a18cc62322bf1649284 = $(`<div id="html_f72788f68d3d3a18cc62322bf1649284" style="width: 100.0%; height: 100.0%;">Green Space at (43.6165, -79.5290)</div>`)[0];
+                popup_9e432bb0cfcef809721fe9a13b8cb514.setContent(html_f72788f68d3d3a18cc62322bf1649284);
+            
+        
+
+        polygon_8e2c15ab9c48362884b8013ecf11650c.bindPopup(popup_9e432bb0cfcef809721fe9a13b8cb514)
+        ;
+
+        
+    
+    
+            var polygon_646790c64928dc10de4af5020002d41a = L.polygon(
+                [[43.638884135471066, -79.53831295021841], [43.64005929005199, -79.53831295021841], [43.64005929005199, -79.53713779563749], [43.638884135471066, -79.53713779563749]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_820575c7ea7eb1399123371c2ed33aca = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9325084a7e3b266c5052e4e3868ec1d7 = $(`<div id="html_9325084a7e3b266c5052e4e3868ec1d7" style="width: 100.0%; height: 100.0%;">Green Space at (43.6389, -79.5383)</div>`)[0];
+                popup_820575c7ea7eb1399123371c2ed33aca.setContent(html_9325084a7e3b266c5052e4e3868ec1d7);
+            
+        
+
+        polygon_646790c64928dc10de4af5020002d41a.bindPopup(popup_820575c7ea7eb1399123371c2ed33aca)
+        ;
+
+        
+    
+    
+            var polygon_5dfa39a81a4471409b2833e0c45809dc = L.polygon(
+                [[43.646244996205866, -79.50795068994952], [43.648069238542625, -79.50795068994952], [43.648069238542625, -79.50612644761277], [43.646244996205866, -79.50612644761277]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_60926b690cb698365ff1936adaca7b63 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_58bc61ebedcda093d2788617b91138c4 = $(`<div id="html_58bc61ebedcda093d2788617b91138c4" style="width: 100.0%; height: 100.0%;">Green Space at (43.6462, -79.5080)</div>`)[0];
+                popup_60926b690cb698365ff1936adaca7b63.setContent(html_58bc61ebedcda093d2788617b91138c4);
+            
+        
+
+        polygon_5dfa39a81a4471409b2833e0c45809dc.bindPopup(popup_60926b690cb698365ff1936adaca7b63)
+        ;
+
+        
+    
+    
+            var polygon_e38cfeba589ded54fa3e9ef1019e2bc8 = L.polygon(
+                [[43.66079334144884, -79.50531331477245], [43.662034197398086, -79.50531331477245], [43.662034197398086, -79.5040724588232], [43.66079334144884, -79.5040724588232]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_e9ea2a0146812ad586959e80ff49b1b5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_13b1ee732524ab4a01d1a6352920eb31 = $(`<div id="html_13b1ee732524ab4a01d1a6352920eb31" style="width: 100.0%; height: 100.0%;">Green Space at (43.6608, -79.5053)</div>`)[0];
+                popup_e9ea2a0146812ad586959e80ff49b1b5.setContent(html_13b1ee732524ab4a01d1a6352920eb31);
+            
+        
+
+        polygon_e38cfeba589ded54fa3e9ef1019e2bc8.bindPopup(popup_e9ea2a0146812ad586959e80ff49b1b5)
+        ;
+
+        
+    
+    
+            var polygon_ad204a18eb59c6575f06ad0c04d6489b = L.polygon(
+                [[43.6306763653218, -79.4987685818768], [43.632229094789174, -79.4987685818768], [43.632229094789174, -79.49721585240943], [43.6306763653218, -79.49721585240943]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_2fcc35f2dfed53d462af9be577fbd21d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_099a30cc5fa7d1ba29eee46b28c5dca7 = $(`<div id="html_099a30cc5fa7d1ba29eee46b28c5dca7" style="width: 100.0%; height: 100.0%;">Green Space at (43.6307, -79.4988)</div>`)[0];
+                popup_2fcc35f2dfed53d462af9be577fbd21d.setContent(html_099a30cc5fa7d1ba29eee46b28c5dca7);
+            
+        
+
+        polygon_ad204a18eb59c6575f06ad0c04d6489b.bindPopup(popup_2fcc35f2dfed53d462af9be577fbd21d)
+        ;
+
+        
+    
+    
+            var polygon_e3eceb7c39ca50cea4be7dff5724b905 = L.polygon(
+                [[43.6671080544658, -79.52045615931063], [43.668311099751406, -79.52045615931063], [43.668311099751406, -79.51925311402502], [43.6671080544658, -79.51925311402502]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_a4f0a333c0ea28cb1a112ca1b084445f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_daa9920d6596687aacf258835c6c1bb3 = $(`<div id="html_daa9920d6596687aacf258835c6c1bb3" style="width: 100.0%; height: 100.0%;">Green Space at (43.6671, -79.5205)</div>`)[0];
+                popup_a4f0a333c0ea28cb1a112ca1b084445f.setContent(html_daa9920d6596687aacf258835c6c1bb3);
+            
+        
+
+        polygon_e3eceb7c39ca50cea4be7dff5724b905.bindPopup(popup_a4f0a333c0ea28cb1a112ca1b084445f)
+        ;
+
+        
+    
+    
+            var polygon_ac04bf35730f0c941f0a8443ca5c867f = L.polygon(
+                [[43.63892469712411, -79.45117925123847], [43.64061460376643, -79.45117925123847], [43.64061460376643, -79.44948934459615], [43.63892469712411, -79.44948934459615]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_353f4473f15a4c9d3ebcd5e67f4acb97 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_618887eac828544d5c523b781d218820 = $(`<div id="html_618887eac828544d5c523b781d218820" style="width: 100.0%; height: 100.0%;">Green Space at (43.6389, -79.4512)</div>`)[0];
+                popup_353f4473f15a4c9d3ebcd5e67f4acb97.setContent(html_618887eac828544d5c523b781d218820);
+            
+        
+
+        polygon_ac04bf35730f0c941f0a8443ca5c867f.bindPopup(popup_353f4473f15a4c9d3ebcd5e67f4acb97)
+        ;
+
+        
+    
+    
+            var polygon_05f7076728e35b7056f0d9d36dde8954 = L.polygon(
+                [[43.63198588319724, -79.47471020265594], [43.63343587315749, -79.47471020265594], [43.63343587315749, -79.47326021269569], [43.63198588319724, -79.47326021269569]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_d59c15cdfbed949ea108bfa9b3aae0f9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_54084963698a472caea56072a4b380b0 = $(`<div id="html_54084963698a472caea56072a4b380b0" style="width: 100.0%; height: 100.0%;">Green Space at (43.6320, -79.4747)</div>`)[0];
+                popup_d59c15cdfbed949ea108bfa9b3aae0f9.setContent(html_54084963698a472caea56072a4b380b0);
+            
+        
+
+        polygon_05f7076728e35b7056f0d9d36dde8954.bindPopup(popup_d59c15cdfbed949ea108bfa9b3aae0f9)
+        ;
+
+        
+    
+    
+            var polygon_22c679401acc7576df04bd21428eaf95 = L.polygon(
+                [[43.66906186487482, -79.48630188742904], [43.6703014350518, -79.48630188742904], [43.6703014350518, -79.48506231725206], [43.66906186487482, -79.48506231725206]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_36cfad89fdd37a42c11c386c9baa0591 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ffa5b397ff16fa97e615b6e3f68740c9 = $(`<div id="html_ffa5b397ff16fa97e615b6e3f68740c9" style="width: 100.0%; height: 100.0%;">Green Space at (43.6691, -79.4863)</div>`)[0];
+                popup_36cfad89fdd37a42c11c386c9baa0591.setContent(html_ffa5b397ff16fa97e615b6e3f68740c9);
+            
+        
+
+        polygon_22c679401acc7576df04bd21428eaf95.bindPopup(popup_36cfad89fdd37a42c11c386c9baa0591)
+        ;
+
+        
+    
+    
+            var polygon_e496ffcf4d095bc5eb8202382a222979 = L.polygon(
+                [[43.67760541512415, -79.52866401439667], [43.678826408656256, -79.52866401439667], [43.678826408656256, -79.52744302086455], [43.67760541512415, -79.52744302086455]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_fe4bf2149bd605c5e04efc034f0cfdc4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bead3b9ad48e54e6fd1f30566caaa5b3 = $(`<div id="html_bead3b9ad48e54e6fd1f30566caaa5b3" style="width: 100.0%; height: 100.0%;">Green Space at (43.6776, -79.5287)</div>`)[0];
+                popup_fe4bf2149bd605c5e04efc034f0cfdc4.setContent(html_bead3b9ad48e54e6fd1f30566caaa5b3);
+            
+        
+
+        polygon_e496ffcf4d095bc5eb8202382a222979.bindPopup(popup_fe4bf2149bd605c5e04efc034f0cfdc4)
+        ;
+
+        
+    
+    
+            var polygon_a4ed7714954897e35f01fca86fe6334f = L.polygon(
+                [[43.675312655581195, -79.51510397393534], [43.67682478772605, -79.51510397393534], [43.67682478772605, -79.51359184179049], [43.675312655581195, -79.51359184179049]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_60a1af658fbe7bba826e26d98a816fc3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_404b3865fb481b83604f3d768847891f = $(`<div id="html_404b3865fb481b83604f3d768847891f" style="width: 100.0%; height: 100.0%;">Green Space at (43.6753, -79.5151)</div>`)[0];
+                popup_60a1af658fbe7bba826e26d98a816fc3.setContent(html_404b3865fb481b83604f3d768847891f);
+            
+        
+
+        polygon_a4ed7714954897e35f01fca86fe6334f.bindPopup(popup_60a1af658fbe7bba826e26d98a816fc3)
+        ;
+
+        
+    
+    
+            var polygon_7db325cd0613bc2dd0bf7569a4e97748 = L.polygon(
+                [[43.66757898744324, -79.46693760935439], [43.66885989961552, -79.46693760935439], [43.66885989961552, -79.46565669718211], [43.66757898744324, -79.46565669718211]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_e382e73f9d6950eb87c8fd5815844def = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bc9b2713ebc89f0dbdfd5c982ed7e912 = $(`<div id="html_bc9b2713ebc89f0dbdfd5c982ed7e912" style="width: 100.0%; height: 100.0%;">Green Space at (43.6676, -79.4669)</div>`)[0];
+                popup_e382e73f9d6950eb87c8fd5815844def.setContent(html_bc9b2713ebc89f0dbdfd5c982ed7e912);
+            
+        
+
+        polygon_7db325cd0613bc2dd0bf7569a4e97748.bindPopup(popup_e382e73f9d6950eb87c8fd5815844def)
+        ;
+
+        
+    
+    
+            var polygon_cab1c72d961e0d9e2207c2e20ae2bddd = L.polygon(
+                [[43.67188597279977, -79.47466344546093], [43.673566687152345, -79.47466344546093], [43.673566687152345, -79.47298273110836], [43.67188597279977, -79.47298273110836]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_4a85642d8df4f0cf4c868614852009c7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3f6d2a15835a688dfe3249a10fc98568 = $(`<div id="html_3f6d2a15835a688dfe3249a10fc98568" style="width: 100.0%; height: 100.0%;">Green Space at (43.6719, -79.4747)</div>`)[0];
+                popup_4a85642d8df4f0cf4c868614852009c7.setContent(html_3f6d2a15835a688dfe3249a10fc98568);
+            
+        
+
+        polygon_cab1c72d961e0d9e2207c2e20ae2bddd.bindPopup(popup_4a85642d8df4f0cf4c868614852009c7)
+        ;
+
+        
+    
+    
+            var polygon_b95f722e4581e145fc6feaf1b57140e5 = L.polygon(
+                [[43.62437787097843, -79.49480545276441], [43.626094385539595, -79.49480545276441], [43.626094385539595, -79.49308893820324], [43.62437787097843, -79.49308893820324]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_ce4bff54eecd6c358e714870a7b78186 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_52b2d7f0ebe656c6467dc7a315de29f1 = $(`<div id="html_52b2d7f0ebe656c6467dc7a315de29f1" style="width: 100.0%; height: 100.0%;">Green Space at (43.6244, -79.4948)</div>`)[0];
+                popup_ce4bff54eecd6c358e714870a7b78186.setContent(html_52b2d7f0ebe656c6467dc7a315de29f1);
+            
+        
+
+        polygon_b95f722e4581e145fc6feaf1b57140e5.bindPopup(popup_ce4bff54eecd6c358e714870a7b78186)
+        ;
+
+        
+    
+    
+            var polygon_6b90170f922fc4644e91f820efdc84e8 = L.polygon(
+                [[43.66680798067035, -79.47252824291878], [43.66823202611238, -79.47252824291878], [43.66823202611238, -79.47110419747676], [43.66680798067035, -79.47110419747676]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_c23cbce7bcf22a0d462d437827f3e66a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2a68f0e9e8e3e1e39c79afd30e23a19f = $(`<div id="html_2a68f0e9e8e3e1e39c79afd30e23a19f" style="width: 100.0%; height: 100.0%;">Green Space at (43.6668, -79.4725)</div>`)[0];
+                popup_c23cbce7bcf22a0d462d437827f3e66a.setContent(html_2a68f0e9e8e3e1e39c79afd30e23a19f);
+            
+        
+
+        polygon_6b90170f922fc4644e91f820efdc84e8.bindPopup(popup_c23cbce7bcf22a0d462d437827f3e66a)
+        ;
+
+        
+    
+    
+            var polygon_a8f7d9566a864ef4446eba00ac65ab22 = L.polygon(
+                [[43.61321133579855, -79.52620364265061], [43.61484193939249, -79.52620364265061], [43.61484193939249, -79.52457303905668], [43.61321133579855, -79.52457303905668]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_ef0fe084fe2339ad043d9151546e3cf9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d536a0540bee510e511457a0ea6763fb = $(`<div id="html_d536a0540bee510e511457a0ea6763fb" style="width: 100.0%; height: 100.0%;">Green Space at (43.6132, -79.5262)</div>`)[0];
+                popup_ef0fe084fe2339ad043d9151546e3cf9.setContent(html_d536a0540bee510e511457a0ea6763fb);
+            
+        
+
+        polygon_a8f7d9566a864ef4446eba00ac65ab22.bindPopup(popup_ef0fe084fe2339ad043d9151546e3cf9)
+        ;
+
+        
+    
+    
+            var polygon_e75dd5615aa3ba46a0e77c890577d381 = L.polygon(
+                [[43.64352554823985, -79.45276180874879], [43.64470164700835, -79.45276180874879], [43.64470164700835, -79.4515857099803], [43.64352554823985, -79.4515857099803]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_3319663af8eeacea928d9e9aa63bdcf1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_371febf9a038a69f201b631be1bcc168 = $(`<div id="html_371febf9a038a69f201b631be1bcc168" style="width: 100.0%; height: 100.0%;">Green Space at (43.6435, -79.4528)</div>`)[0];
+                popup_3319663af8eeacea928d9e9aa63bdcf1.setContent(html_371febf9a038a69f201b631be1bcc168);
+            
+        
+
+        polygon_e75dd5615aa3ba46a0e77c890577d381.bindPopup(popup_3319663af8eeacea928d9e9aa63bdcf1)
+        ;
+
+        
+    
+    
+            var polygon_55139a315af043f7034da176cefe9ac2 = L.polygon(
+                [[43.6615912835789, -79.52639830988983], [43.66346195418123, -79.52639830988983], [43.66346195418123, -79.5245276392875], [43.6615912835789, -79.5245276392875]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_ca13331d7003258df97404a30b220c38 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b6e9a5b7f33109486eb1cffafa092b0b = $(`<div id="html_b6e9a5b7f33109486eb1cffafa092b0b" style="width: 100.0%; height: 100.0%;">Green Space at (43.6616, -79.5264)</div>`)[0];
+                popup_ca13331d7003258df97404a30b220c38.setContent(html_b6e9a5b7f33109486eb1cffafa092b0b);
+            
+        
+
+        polygon_55139a315af043f7034da176cefe9ac2.bindPopup(popup_ca13331d7003258df97404a30b220c38)
+        ;
+
+        
+    
+    
+            var polygon_207d8ba8c8f71435bfceb2112ab2883e = L.polygon(
+                [[43.66822427928824, -79.45671420714766], [43.669506341343556, -79.45671420714766], [43.669506341343556, -79.45543214509233], [43.66822427928824, -79.45543214509233]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_b1d3e5fae690eb999e14bfca751341b3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_34907559e5a035851028b37f4092149f = $(`<div id="html_34907559e5a035851028b37f4092149f" style="width: 100.0%; height: 100.0%;">Green Space at (43.6682, -79.4567)</div>`)[0];
+                popup_b1d3e5fae690eb999e14bfca751341b3.setContent(html_34907559e5a035851028b37f4092149f);
+            
+        
+
+        polygon_207d8ba8c8f71435bfceb2112ab2883e.bindPopup(popup_b1d3e5fae690eb999e14bfca751341b3)
+        ;
+
+        
+    
+    
+            var polygon_86cc1802b74b63d40fe6c930ed402786 = L.polygon(
+                [[43.6526670916439, -79.48138246230566], [43.654468329798824, -79.48138246230566], [43.654468329798824, -79.47958122415073], [43.6526670916439, -79.47958122415073]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_99475ce68ea373e811e2eb4a1a75e1c4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2afc803c95951751c1fb07d18dd9e9c8 = $(`<div id="html_2afc803c95951751c1fb07d18dd9e9c8" style="width: 100.0%; height: 100.0%;">Green Space at (43.6527, -79.4814)</div>`)[0];
+                popup_99475ce68ea373e811e2eb4a1a75e1c4.setContent(html_2afc803c95951751c1fb07d18dd9e9c8);
+            
+        
+
+        polygon_86cc1802b74b63d40fe6c930ed402786.bindPopup(popup_99475ce68ea373e811e2eb4a1a75e1c4)
+        ;
+
+        
+    
+    
+            var polygon_dbe1c65b388d83f092a715fdd13298bf = L.polygon(
+                [[43.67953990470876, -79.45310392573847], [43.681302750905836, -79.45310392573847], [43.681302750905836, -79.45134107954141], [43.67953990470876, -79.45134107954141]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_4e3d9020645f17d2d1c42cababe66bee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2cae961449842249bd5dc8078413af41 = $(`<div id="html_2cae961449842249bd5dc8078413af41" style="width: 100.0%; height: 100.0%;">Green Space at (43.6795, -79.4531)</div>`)[0];
+                popup_4e3d9020645f17d2d1c42cababe66bee.setContent(html_2cae961449842249bd5dc8078413af41);
+            
+        
+
+        polygon_dbe1c65b388d83f092a715fdd13298bf.bindPopup(popup_4e3d9020645f17d2d1c42cababe66bee)
+        ;
+
+        
+    
+    
+            var polygon_cbc73d4b78392cb16e5d9cf3881e9e2d = L.polygon(
+                [[43.664185576665936, -79.53985832420204], [43.666153011626655, -79.53985832420204], [43.666153011626655, -79.53789088924132], [43.664185576665936, -79.53789088924132]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_4b78a0cebe3c765325f9ce2944975913 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8c81c24dd2f048b3eaf1bc7424db0222 = $(`<div id="html_8c81c24dd2f048b3eaf1bc7424db0222" style="width: 100.0%; height: 100.0%;">Green Space at (43.6642, -79.5399)</div>`)[0];
+                popup_4b78a0cebe3c765325f9ce2944975913.setContent(html_8c81c24dd2f048b3eaf1bc7424db0222);
+            
+        
+
+        polygon_cbc73d4b78392cb16e5d9cf3881e9e2d.bindPopup(popup_4b78a0cebe3c765325f9ce2944975913)
+        ;
+
+        
+    
+    
+            var polygon_bf470dcd419e7685115bbc846f5ae581 = L.polygon(
+                [[43.64560735403529, -79.46873573742181], [43.64745964548494, -79.46873573742181], [43.64745964548494, -79.46688344597216], [43.64560735403529, -79.46688344597216]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_2e2a90f233acf4bab02056095cb5559e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b1ed4e470315696eb98ab6ab54f31ad4 = $(`<div id="html_b1ed4e470315696eb98ab6ab54f31ad4" style="width: 100.0%; height: 100.0%;">Green Space at (43.6456, -79.4687)</div>`)[0];
+                popup_2e2a90f233acf4bab02056095cb5559e.setContent(html_b1ed4e470315696eb98ab6ab54f31ad4);
+            
+        
+
+        polygon_bf470dcd419e7685115bbc846f5ae581.bindPopup(popup_2e2a90f233acf4bab02056095cb5559e)
+        ;
+
+        
+    
+    
+            var polygon_8bf5822182e646fbee8b61d9f591f4b6 = L.polygon(
+                [[43.64338031213081, -79.50068376308916], [43.64442712717127, -79.50068376308916], [43.64442712717127, -79.4996369480487], [43.64338031213081, -79.4996369480487]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_a92f81eacbf1194eee780862323bc76e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b41ddec22c6ac577fb36aa6b98da764d = $(`<div id="html_b41ddec22c6ac577fb36aa6b98da764d" style="width: 100.0%; height: 100.0%;">Green Space at (43.6434, -79.5007)</div>`)[0];
+                popup_a92f81eacbf1194eee780862323bc76e.setContent(html_b41ddec22c6ac577fb36aa6b98da764d);
+            
+        
+
+        polygon_8bf5822182e646fbee8b61d9f591f4b6.bindPopup(popup_a92f81eacbf1194eee780862323bc76e)
+        ;
+
+        
+    
+    
+            var polygon_d3c3e87f255e4823919de7a842455fb3 = L.polygon(
+                [[43.62249554919885, -79.47910150515645], [43.62378500852929, -79.47910150515645], [43.62378500852929, -79.47781204582601], [43.62249554919885, -79.47781204582601]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_09bd0a74c4b2c47a9e36c057c0493760 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8d6c089a49f42d0d95bc3d710735fb4b = $(`<div id="html_8d6c089a49f42d0d95bc3d710735fb4b" style="width: 100.0%; height: 100.0%;">Green Space at (43.6225, -79.4791)</div>`)[0];
+                popup_09bd0a74c4b2c47a9e36c057c0493760.setContent(html_8d6c089a49f42d0d95bc3d710735fb4b);
+            
+        
+
+        polygon_d3c3e87f255e4823919de7a842455fb3.bindPopup(popup_09bd0a74c4b2c47a9e36c057c0493760)
+        ;
+
+        
+    
+    
+            var polygon_0d64cd903150e0b67f31ba1b3597277b = L.polygon(
+                [[43.64943864292453, -79.46247849617725], [43.65054441020026, -79.46247849617725], [43.65054441020026, -79.46137272890152], [43.64943864292453, -79.46137272890152]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_5e085b24427020a3e55ba84a39a6e6e9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c058dd5d4e03a0b10188583c488f9c0a = $(`<div id="html_c058dd5d4e03a0b10188583c488f9c0a" style="width: 100.0%; height: 100.0%;">Green Space at (43.6494, -79.4625)</div>`)[0];
+                popup_5e085b24427020a3e55ba84a39a6e6e9.setContent(html_c058dd5d4e03a0b10188583c488f9c0a);
+            
+        
+
+        polygon_0d64cd903150e0b67f31ba1b3597277b.bindPopup(popup_5e085b24427020a3e55ba84a39a6e6e9)
+        ;
+
+        
+    
+    
+            var polygon_7a0d5adc32ec294eb9cc490f2a6ceb62 = L.polygon(
+                [[43.61744575313211, -79.53056043001399], [43.61924983071357, -79.53056043001399], [43.61924983071357, -79.52875635243254], [43.61744575313211, -79.52875635243254]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_0627c0f14170a23e6cb2d81041384e9b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c894a501794ab54a989e2e3b024e18a9 = $(`<div id="html_c894a501794ab54a989e2e3b024e18a9" style="width: 100.0%; height: 100.0%;">Green Space at (43.6174, -79.5306)</div>`)[0];
+                popup_0627c0f14170a23e6cb2d81041384e9b.setContent(html_c894a501794ab54a989e2e3b024e18a9);
+            
+        
+
+        polygon_7a0d5adc32ec294eb9cc490f2a6ceb62.bindPopup(popup_0627c0f14170a23e6cb2d81041384e9b)
+        ;
+
+        
+    
+    
+            var polygon_763b7d3af5286fc41dba0eccc87dd6fc = L.polygon(
+                [[43.64227393701878, -79.48062097342027], [43.64409810041888, -79.48062097342027], [43.64409810041888, -79.47879681002017], [43.64227393701878, -79.47879681002017]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_f3ffbb4ff547fb1a77a2e60e6a74e8a9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_72a0c41689ada0203015d3d4b6519fe3 = $(`<div id="html_72a0c41689ada0203015d3d4b6519fe3" style="width: 100.0%; height: 100.0%;">Green Space at (43.6423, -79.4806)</div>`)[0];
+                popup_f3ffbb4ff547fb1a77a2e60e6a74e8a9.setContent(html_72a0c41689ada0203015d3d4b6519fe3);
+            
+        
+
+        polygon_763b7d3af5286fc41dba0eccc87dd6fc.bindPopup(popup_f3ffbb4ff547fb1a77a2e60e6a74e8a9)
+        ;
+
+        
+    
+    
+            var polygon_a744ca5643ba1ccbf5033138085f03be = L.polygon(
+                [[43.631182382107944, -79.4724927596928], [43.63260605119788, -79.4724927596928], [43.63260605119788, -79.47106909060287], [43.631182382107944, -79.47106909060287]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_2cad4411601791ef86a5d643ee9b27b4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_43cec01bf1529b82e8b462caec984fcd = $(`<div id="html_43cec01bf1529b82e8b462caec984fcd" style="width: 100.0%; height: 100.0%;">Green Space at (43.6312, -79.4725)</div>`)[0];
+                popup_2cad4411601791ef86a5d643ee9b27b4.setContent(html_43cec01bf1529b82e8b462caec984fcd);
+            
+        
+
+        polygon_a744ca5643ba1ccbf5033138085f03be.bindPopup(popup_2cad4411601791ef86a5d643ee9b27b4)
+        ;
+
+        
+    
+    
+            var polygon_de9f35910929e6287cec4e538e980fac = L.polygon(
+                [[43.67335002877949, -79.50508016372524], [43.67527504985163, -79.50508016372524], [43.67527504985163, -79.5031551426531], [43.67335002877949, -79.5031551426531]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_fb7f587d618daacd9ed75a31b3014e2b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_922bee79f69d012e7d9ba29077e94315 = $(`<div id="html_922bee79f69d012e7d9ba29077e94315" style="width: 100.0%; height: 100.0%;">Green Space at (43.6734, -79.5051)</div>`)[0];
+                popup_fb7f587d618daacd9ed75a31b3014e2b.setContent(html_922bee79f69d012e7d9ba29077e94315);
+            
+        
+
+        polygon_de9f35910929e6287cec4e538e980fac.bindPopup(popup_fb7f587d618daacd9ed75a31b3014e2b)
+        ;
+
+        
+    
+    
+            var polygon_efa79241dd7f6d82ed794f010a50065b = L.polygon(
+                [[43.616486962837556, -79.4905223810859], [43.618284804148324, -79.4905223810859], [43.618284804148324, -79.48872453977513], [43.616486962837556, -79.48872453977513]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_b2696070bd041130940eafc90d44b953);
+        
+    
+        var popup_d23cdf38484cd4b8b323f109f14bf91d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fea8fb2e947452c6d0060e9b286fbf85 = $(`<div id="html_fea8fb2e947452c6d0060e9b286fbf85" style="width: 100.0%; height: 100.0%;">Green Space at (43.6165, -79.4905)</div>`)[0];
+                popup_d23cdf38484cd4b8b323f109f14bf91d.setContent(html_fea8fb2e947452c6d0060e9b286fbf85);
+            
+        
+
+        polygon_efa79241dd7f6d82ed794f010a50065b.bindPopup(popup_d23cdf38484cd4b8b323f109f14bf91d)
+        ;
+
+        
+    
+</script>
+</html>
